@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block title %}
+  <title>Register | MTG Game Tracker</title>
+{% endblock %}
+
+{% block content %}
+  <br>
+  <div class="container shadow-md p-5">
+    <h1 class="">Register</h1>
+    <br>
+    <form action=""
+          method="POST"
+          autocomplete="off">
+      {% csrf_token %}
+      {{ form.username|as_crispy_field }}
+      <br>
+      {{ form.email|as_crispy_field }}
+      <br>
+      {{ form.password1|as_crispy_field }}
+      <br>
+      {{ form.password2|as_crispy_field }}
+      <br>
+      <input class="btn btn-primary w-100"
+             type="submit"
+             name=""
+             value="Create my account">
+    </form>
+
+    <br>
+    <br>
+    <p class="">Already have an account</p>
+    <a href="{% url 'my-login' %}"
+       class="">Login to my account</a>
+  </div>
+  <br>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+  <title>Dashboard | MTG Game Tracker</title>
+{% endblock %}
+
+{% block content %}
+  <br>
+  <div class="container shadow-md p-5 full-height">
+    <h1 class="">Dashboard</h1>
+    <hr>
+    <h4 class="h4">Welcome, {{ user }}</h4>
+    <br>
+    <div class="row">
+      <div class="col-sm g-2 p-2">
+        <a href="{% url 'track' %}"
+           class="btn btn-primary block w-100" >Track a game</a>
+      </div>
+      <div class="col-sm g-2 p-2">
+        <a href="{% url 'stats' %}"
+           class="btn btn-primary block w-100" >Check your stats</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm g-2 p-2">
+        <a href="{% url 'my-decks' %}"
+           class="btn btn-primary block w-100" >Manage Decks</a>
+      </div>
+      <div class="col-sm g-2 p-2">
+        <a href="{% url 'wincon' %}"
+           class="btn btn-primary block w-100" >Manage Wincons</a>
+      </div>
+    </div>
+    <br>
+    {#<img style="width: 100px;"#}
+    {#     src="{{ profilePic.profile_pic.url }}"#}
+    {#     alt="">#}
+    <br>
+    <br>
+
+    <a href="{% url 'profile-management' %}"
+       class="">Manage Profile</a>
+  </div>
+
+
+{% endblock %}
